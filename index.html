@@ -37,19 +37,21 @@
         /* Mobile layout for intro photos (Screens smaller than 980px) */
         @media screen and (max-width: 980px) {
             #intro .spotlight {
-                flex-direction: column !important; /* Stack the sections */
+                flex-direction: column !important; 
             }
             #intro .content {
-                order: 1 !important; /* Force text to the top */
+                order: 2 !important; /* Pushed the text to be below the photos */
             }
             .intro-images {
-                order: 2 !important; /* Force photos below the text */
-                margin-left: 0; /* Remove desktop spacing */
-                margin-top: 2em; /* Add space above photos */
-                flex-direction: row; /* Put photos side-by-side on mobile */
-                width: 100%; 
-                max-width: 260px; /* Keep them from getting too massive */
+                order: 1 !important; /* Pulled the photos to the very top */
+                margin: 0 auto 1.5em auto !important; /* Added 1.5em of space below the photos */
+                flex-direction: row; 
+                width: 70%; 
+                max-width: 280px; 
                 justify-content: center;
+            }
+            .intro-images img {
+                width: calc(50% - 0.375em); 
             }
         }
     </style>
