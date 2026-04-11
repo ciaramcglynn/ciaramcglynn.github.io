@@ -11,7 +11,50 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
+	
+<style>
+        /* Desktop layout for intro photos */
+        .intro-images {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75em;
+            width: 170px;
+            flex-shrink: 0;
+            align-items: center;
+            margin-left: 2.5em;
+            padding: 0.75em;
+            border: 2px solid rgba(144, 144, 144, 0.25);
+            border-radius: 10px;
+        }
+        .intro-images img {
+            width: 100%;
+            border-radius: 6px;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+            margin-bottom: 0;
+        }
+
+        /* Mobile layout for intro photos (Screens smaller than 980px) */
+        @media screen and (max-width: 980px) {
+            #intro .spotlight {
+                flex-direction: column !important; /* Stack the sections */
+            }
+            #intro .content {
+                order: 1 !important; /* Force text to the top */
+            }
+            .intro-images {
+                order: 2 !important; /* Force photos below the text */
+                margin-left: 0; /* Remove desktop spacing */
+                margin-top: 2em; /* Add space above photos */
+                flex-direction: row; /* Put photos side-by-side on mobile */
+                width: 100%; 
+                max-width: 260px; /* Keep them from getting too massive */
+                justify-content: center;
+            }
+        }
+    </style>
+
+</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -55,12 +98,9 @@
             <p>I am based in Portland, Oregon, where I live with my dog, Whiskey. Having been present for every academic milestone from my Master’s program through my PhD, it feels only right to include him here.</p>
         </div>
         
-        <div style="display: flex; flex-direction: column; gap: 0.75em; width: 170px; flex-shrink: 0; align-items: center; margin-left: 2.5em; padding: 0.75em; border: 2px solid rgba(144, 144, 144, 0.25); border-radius: 10px;">
-            
-            <img src="images/headshot.jpg" alt="Professional Headshot" style="width: 100%; border-radius: 6px; object-fit: cover; aspect-ratio: 1/1; margin-bottom: 0;" />
-            
-            <img src="images/whiskey.jpg" alt="Ciara and Whiskey" style="width: 100%; border-radius: 6px; object-fit: cover; aspect-ratio: 1/1; margin-bottom: 0;" />
-            
+        <div class="intro-images">
+            <img src="images/headshot.jpg" alt="Professional Headshot" />
+            <img src="images/whiskey.jpg" alt="Ciara and Whiskey" />
         </div>
     </div>
 </section>
